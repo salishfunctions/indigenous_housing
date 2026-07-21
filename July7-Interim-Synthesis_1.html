@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interim Synthesis · July 7, 2026 Workshop · BC Indigenous Housing Society</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cyan:#55dde0;
+  --baltic:#33658a;
+  --charcoal:#2f4858;
+  --bronze:#f6ae2d;
+  --orange:#f26419;
+  --ink:#2f4858;
+  --paper:#f7f9fa;
+  --card:#ffffff;
+  --line:#dbe4e9;
+  --tintA:#eaf1f6;
+  --tintB:#fdf3df;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  font-family:'Public Sans',system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:17px;
+}
+a{color:var(--baltic);text-decoration-color:rgba(51,101,138,.4);text-underline-offset:2px}
+a:hover{color:var(--orange);text-decoration-color:var(--orange)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--bronze);outline-offset:2px;border-radius:3px}
+
+/* ---------- sticky bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--charcoal);color:#fff;
+  display:flex;align-items:center;gap:1rem;
+  padding:.55rem 1.25rem;flex-wrap:wrap;
+}
+.topbar .who{font-weight:700;font-size:.85rem;letter-spacing:.04em;color:var(--cyan)}
+.topbar nav{display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+.topbar nav a{color:#fff;text-decoration:none;opacity:.85}
+.topbar nav a:hover{opacity:1;color:var(--cyan)}
+.topbar .due{
+  margin-left:auto;background:var(--orange);color:#fff;
+  font-weight:700;font-size:.8rem;padding:.25rem .7rem;border-radius:99px;
+  white-space:nowrap;text-decoration:none;
+}
+.topbar .due:hover{background:#d8540e;color:#fff}
+
+/* ---------- header ---------- */
+header.hero{
+  background:linear-gradient(160deg,var(--charcoal) 0%,#233947 55%,var(--baltic) 130%);
+  color:#fff;padding:4rem 1.5rem 3.25rem;
+  position:relative;overflow:hidden;
+}
+header.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:6px;
+  background:linear-gradient(90deg,var(--cyan) 0 20%,var(--baltic) 0 40%,var(--bronze) 0 60%,var(--orange) 0 80%,var(--cyan) 0);
+}
+.hero-inner{max-width:880px;margin:0 auto}
+.hero .kicker{
+  color:var(--cyan);font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;font-size:.8rem;margin-bottom:1rem;
+}
+.hero h1{
+  font-family:'Fraunces',Georgia,serif;font-weight:700;
+  font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.12;margin-bottom:1rem;
+}
+.hero .sub{font-size:1.1rem;max-width:620px;color:#dbe7ee}
+.hero .host{margin-top:1.75rem;font-size:.9rem;color:#aecadb}
+
+/* ---------- deadline band ---------- */
+.deadline{
+  background:var(--orange);color:#fff;padding:1.4rem 1.5rem;
+}
+.deadline-inner{max-width:880px;margin:0 auto;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.deadline .date{
+  font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.5rem;white-space:nowrap;
+}
+.deadline p{font-size:1rem;max-width:640px}
+.deadline a{color:#fff;text-decoration-color:rgba(255,255,255,.6)}
+.deadline a:hover{color:#ffe4d1}
+
+/* ---------- layout ---------- */
+main{max-width:880px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+section{margin-bottom:3.25rem}
+h2{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;
+  font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1.1rem;
+  padding-top:.5rem;
+}
+h2 .qnum{color:var(--baltic)}
+h3{font-size:1.05rem;font-weight:700;margin:1.6rem 0 .8rem;letter-spacing:.01em}
+p{margin-bottom:1rem}
+p:last-child{margin-bottom:0}
+.rule{height:3px;width:56px;border:0;background:var(--cyan);margin-bottom:1.25rem}
+.rule.q2{background:var(--bronze)}
+.rule.q3{background:var(--orange)}
+
+/* ---------- insight cards ---------- */
+.insights{display:grid;gap:1rem;margin-top:1.5rem}
+.insight{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:1.4rem 1.5rem 1.4rem 1.25rem;display:flex;gap:1.1rem;
+  border-left:6px solid var(--baltic);
+}
+.insight:nth-child(1){border-left-color:var(--cyan)}
+.insight:nth-child(2){border-left-color:var(--baltic)}
+.insight:nth-child(3){border-left-color:var(--bronze)}
+.insight:nth-child(4){border-left-color:var(--orange)}
+.insight .n{
+  font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.9rem;
+  line-height:1;color:var(--charcoal);opacity:.35;flex-shrink:0;padding-top:.15rem;
+}
+.insight h4{font-size:1.05rem;margin-bottom:.4rem}
+.insight p{font-size:.95rem;margin:0}
+
+/* ---------- track tags ---------- */
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:.22rem .6rem;border-radius:4px;margin-right:.5rem;
+}
+.tag.a{background:var(--baltic);color:#fff}
+.tag.b{background:var(--bronze);color:var(--charcoal)}
+.trackhead{display:flex;align-items:center;gap:.25rem;margin:1.8rem 0 .9rem}
+.trackhead h3{margin:0}
+
+/* ---------- collapsible items ---------- */
+details.item{
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  margin-bottom:.6rem;overflow:hidden;
+}
+details.item.a{border-left:4px solid var(--baltic)}
+details.item.b{border-left:4px solid var(--bronze)}
+details.item summary{
+  cursor:pointer;list-style:none;padding:.85rem 1.1rem;
+  font-weight:600;font-size:.98rem;display:flex;gap:.7rem;align-items:baseline;
+}
+details.item summary::-webkit-details-marker{display:none}
+details.item summary::before{
+  content:"+";font-family:'Fraunces',Georgia,serif;font-weight:700;
+  color:var(--orange);flex-shrink:0;width:.9rem;
+}
+details.item[open] summary::before{content:"–"}
+details.item summary:hover{background:var(--tintA)}
+details.item .body{padding:0 1.1rem 1rem 2.7rem;font-size:.95rem;color:#41586a}
+details.item .body p{margin-bottom:.7rem}
+
+/* ---------- projects list (Q1) ---------- */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.8rem;margin:1.25rem 0}
+.project{
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:.95rem 1.05rem;font-size:.9rem;border-top:4px solid var(--cyan);
+}
+.project a{font-weight:700;display:block;margin-bottom:.25rem}
+.project span{color:#54697a}
+
+/* ---------- tensions ---------- */
+.tensions{display:grid;gap:.85rem;margin-top:1.25rem}
+.tension{
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:1.1rem 1.25rem;font-size:.95rem;
+  border-left:5px solid var(--orange);
+}
+.tension b{display:block;margin-bottom:.3rem;font-size:1rem}
+
+/* ---------- next steps ---------- */
+.next{display:grid;gap:.85rem;margin-top:1.25rem}
+.next-item{
+  background:var(--tintA);border-radius:8px;padding:1.05rem 1.2rem;font-size:.95rem;
+}
+.next-item b{color:var(--baltic)}
+
+/* ---------- misc ---------- */
+.note{
+  background:var(--tintB);border-left:5px solid var(--bronze);
+  border-radius:0 8px 8px 0;padding:1.05rem 1.25rem;font-size:.95rem;margin:1.25rem 0;
+}
+.controls{display:flex;justify-content:flex-end;margin-bottom:1rem}
+.controls button{
+  font:inherit;font-size:.8rem;font-weight:600;color:var(--baltic);
+  background:none;border:1px solid var(--line);border-radius:99px;
+  padding:.35rem .9rem;cursor:pointer;
+}
+.controls button:hover{border-color:var(--baltic);background:var(--tintA)}
+.thanks{
+  text-align:center;font-family:'Fraunces',Georgia,serif;font-size:1.25rem;
+  color:var(--baltic);margin-top:3rem;
+}
+footer{
+  background:var(--charcoal);color:#aecadb;text-align:center;
+  padding:1.75rem 1.5rem;font-size:.85rem;
+}
+footer a{color:var(--cyan)}
+
+@media print{
+  .topbar,.controls{display:none}
+  details.item{border:none;border-left:3px solid var(--line)}
+  body{font-size:12pt;background:#fff}
+  a{color:var(--ink)}
+}
+@media (max-width:640px){
+  .topbar nav{display:none}
+  .insight{flex-direction:column;gap:.4rem}
+  .deadline-inner{flex-direction:column;gap:.4rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="who">BCIHS</span>
+  <nav aria-label="Sections">
+    <a href="#glance">At a glance</a>
+    <a href="#room">Who was there</a>
+    <a href="#heard">What we heard</a>
+    <a href="#tensions">Tensions</a>
+    <a href="#resources">Resources</a>
+    <a href="#next">Next steps</a>
+  </nav>
+  <a class="due" href="#respond">Feedback due July 29</a>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Interim Synthesis · Workshop of July 7, 2026</p>
+    <h1>Prefab Indigenous Housing: what we heard, and what would help</h1>
+    <p class="sub">A thematic snapshot of the July 7 workshop, prepared for participants. Nothing here is attributed to any individual. These are the ideas, not the names.</p>
+    <p class="host">Hosted by BC Indigenous Housing Society (BCIHS)</p>
+  </div>
+</header>
+
+<div class="deadline" id="respond">
+  <div class="deadline-inner">
+    <span class="date">July 29</span>
+    <p><strong>Please send corrections and additions by Wednesday, July 29</strong> to <a href="mailto:khelsilem@gmail.com">khelsilem@gmail.com</a> or <a href="mailto:events@zeic.ca">events@zeic.ca</a>. A short email is perfect. If your feedback is specific, page references or a screenshot with your comments are welcome. Nothing formal is needed.</p>
+  </div>
+</div>
+
+<main>
+
+<section id="why">
+  <h2>Why we gathered</h2>
+  <hr class="rule">
+  <p>BCIHS convened this workshop because prefabricated construction offers a rare chance to address several priorities at once: homes delivered faster and at scale, local jobs and value-added manufacturing rooted in Indigenous-held forestry, and buildings that perform better for the people living in them while cutting energy costs and emissions. The funders behind this project support it for exactly that reason. Housing, economic development, and climate goals reinforce one another here, and this work is meant to advance all three.</p>
+  <p>Our task on the day: to map what is going well, what is challenging, and what would help the sector deliver more prefab housing, better.</p>
+</section>
+
+<section id="before">
+  <h2>Before you read this</h2>
+  <hr class="rule">
+  <p>This is an interim thematic snapshot of what was said on July 7, not the full report. It exists so you can check our work: tell us what we missed, what we got wrong, and what deserves more weight. It is also the place to send updates, links, and resources, e.g. something you referenced in the breakouts or something you would like your colleagues to have. If you had to leave early or did not get to everything, this is your chance to add it.</p>
+  <p>A fuller report follows in about four weeks. It is what we will carry into conversations with funders, government, and key collaborators in the prefabrication industry and the Indigenous non-market housing sector. A possible Phase 2 would build on what it finds.</p>
+  <div class="note">As promised, nothing here is attributed to any individual. These are the ideas, not the names.</div>
+</section>
+
+<section id="glance">
+  <h2>At a glance</h2>
+  <hr class="rule">
+  <p>Four key insights emerged across the workshop discussions:</p>
+  <div class="insights">
+    <div class="insight">
+      <span class="n">1</span>
+      <div>
+        <h4>The gap is capacity, not willingness.</h4>
+        <p>The money and the federal appetite are aligning. Build Canada Homes has even indicated it will absorb prefab's current cost premium. What is missing is the know-how to procure, finance, design, and operate prefab, along with a policy context that is inadvertently at odds with prefab, plus the land-readiness and needs-analysis work that has to happen before a single panel is built. What follows is a plea to fund the pipeline, not the product.</p>
+      </div>
+    </div>
+    <div class="insight">
+      <span class="n">2</span>
+      <div>
+        <h4>Standardize the system, not the house.</h4>
+        <p>The sector is stuck reinventing the wheel for every project. The opportunity people kept coming back to is adaptable standardization: repeatable processes, shared language, performance specs, climate-zone templates, and baseline drawings with à-la-carte options, all of which still leave room for each community's culture and place. It's a battle until "standardization" is defined.</p>
+      </div>
+    </div>
+    <div class="insight">
+      <span class="n">3</span>
+      <div>
+        <h4>There is no organized voice, and a strong call for coordination.</h4>
+        <p>Off-reserve members (76.5% of Indigenous people in BC) face challenges in representation; there are complexities between First Nations governments and urban providers over access to gated funding; and manufacturers struggle with a lack of aggregated demand. What participants called for was collaboration, coordination, and sharing across the sector, building toward alignment on shared priorities. A recognized First Nations-led coordinating voice and a bundled-demand approach were frequently suggested as the structural improvements that alignment could make possible.</p>
+      </div>
+    </div>
+    <div class="insight">
+      <span class="n">4</span>
+      <div>
+        <h4>Indigenous people are already leading the way.</h4>
+        <p>The proven model is nation-led prefab tied to value-added forestry, from Nak'azdli to Heiltsuk to Tsleil-Waututh to Squamish. And while prefab remains a small share of new housing starts, Indigenous leadership runs across the whole supply chain: manufacturers, market and non-market developers, and more, including Métis-owned manufacturing and Métis-led non-market prefab. The task is to make it repeatable, to share the lessons, and to route real procurement and ownership into Indigenous hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="room">
+  <h2>Who was in the room, and what we asked</h2>
+  <hr class="rule">
+  <p>41 participants joined from across the sector: nations, Indigenous housing providers, manufacturers, architects and engineers, funders, government, and the capacity organizations that sit in between. Participants ranged from those who had completed prefab projects to those about to begin, working anywhere from remote on-reserve settings to the urban core. The room skewed urban, which is worth noting because rural and remote realities (and some of the earliest successes) came up repeatedly as needing attention.</p>
+  <p>We worked through three questions in order: <strong>what's going well, what's challenging, and what would help us do more of it and do it better.</strong> The first question was addressed in an open plenary discussion. The second and third questions were addressed in small groups split across two tracks:</p>
+  <div class="tensions" style="margin-top:1rem">
+    <div class="tension" style="border-left-color:var(--baltic)">
+      <b><span class="tag a">Track A</span> Sector capacity and practice</b>
+      The knowledge, tools, partnerships, and shared resources providers need, including procurement approaches, digital design, team assembly, and standardized or repeatable designs.
+    </div>
+    <div class="tension" style="border-left-color:var(--bronze)">
+      <b><span class="tag b">Track B</span> Policy and program design</b>
+      Procurement policy, financing, standardization, and bundling.
+    </div>
+  </div>
+  <p style="margin-top:1.25rem">The session ran under the Chatham House Rule. Background reading was provided before the workshop via the Discussion Primer on Indigenous Prefab Housing.</p>
+</section>
+
+<section id="heard">
+  <h2>What we heard</h2>
+  <hr class="rule">
+  <div class="controls"><button type="button" id="toggleAll" aria-pressed="false">Expand all details</button></div>
+
+  <h2 style="font-size:1.45rem" id="q1"><span class="qnum">Q1.</span> What's going well?</h2>
+  <p>This was the whole-room conversation, so it isn't split by track.</p>
+  <p>The strongest through-line: <strong>the proof already exists.</strong> Completed, nation-led projects are showing members and partners that today's prefab is not the low-quality "CMHC house" of past generations. The builds people pointed to included:</p>
+
+  <div class="projects">
+    <div class="project"><a href="https://www.cbc.ca/news/canada/british-columbia/fort-st-james-timber-house-9.7015537">Nak'azdli mass timber house</a><span>Near Fort St. James. Nation-led, with roughly 60% of assembly labour from the community and wood milled through nation partnerships.</span></div>
+    <div class="project"><a href="https://www.naturallywood.com/projects/chief-leonard-george-building/">Chief Leonard George building</a><span>Intelligent City's prefab envelope, with Tsleil-Waututh.</span></div>
+    <div class="project"><a href="https://naikoon.ca/projects/the-flying-factory/">Naikoon's "Flying Factory"</a><span>Mobile micro-factories, first on Tsleil-Waututh land, with Old Massett.</span></div>
+    <div class="project"><a href="https://fortmodular.com/case-study/bella-bella-staff-housing/">Passive-house multifamily in Bella Bella</a><span>Fort Modular, with Heiltsuk.</span></div>
+    <div class="project"><a href="https://www.blackboxoffsite.com/our-experience/multifamily-modular-passive-house">Yale First Nation's plexes</a><span>Multifamily modular passive house.</span></div>
+    <div class="project"><a href="https://www.kindredconstruction.com/institutional-projects/hiy%CC%93am%CC%93-housing-capilano/">Hiy̓ám̓ Housing's modular in Capilano</a><span>55 units in 13 months, with CMHC funding up front.</span></div>
+  </div>
+
+  <p>Beyond the builds, three things were named as going well:</p>
+  <details class="item">
+    <summary>Indigenous people are leaders and innovators in this space</summary>
+    <div class="body"><p>A shift tied to nations taking control of tree farm licenses and forestry and now looking upstream at value-added manufacturing.</p></div>
+  </details>
+  <details class="item">
+    <summary>A funder signal that's genuinely new</summary>
+    <div class="body"><p>Federal voices (Build Canada Homes, the housing minister's office) saying openly that they know prefab costs more right now and are prepared to invest in that premium. Several people called this a first in their working lives.</p></div>
+  </details>
+  <details class="item">
+    <summary>The ecosystem itself is maturing</summary>
+    <div class="body"><p>A snowballing, cross-sector community; product-agnostic evaluation of systems; and a slower, relationship-first way of working. Training efforts (BCIT, the Indigenous Construction Standard) are uplifting Indigenous youth and women into the industry.</p></div>
+  </details>
+
+  <h2 style="font-size:1.45rem;margin-top:2.75rem" id="q2"><span class="qnum">Q2.</span> What's challenging?</h2>
+  <hr class="rule q2">
+
+  <div class="trackhead"><span class="tag a">Track A</span><h3>Sector capacity and practice</h3></div>
+  <details class="item a">
+    <summary>Reinventing the wheel on every project</summary>
+    <div class="body"><p>Even prefab projects run the same old process with little carried forward, driven by standard professional practices (and, named honestly, some self-interest in fees), high administrative burden, and default procurement and design routines.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Knowledge and institutional capacity gaps, worst in rural and remote areas</summary>
+    <div class="body"><p>Low general knowledge of prefab options and of the procurement, design, and team approaches that suit them; many bands and non-profits lack the staff, revenue, or governance systems to take advantage of prefab, which erodes the value of the money that does exist. Rural and remote players are often excluded from convenings like this one, even though some of the clearest early wins are theirs.</p></div>
+  </details>
+  <details class="item a">
+    <summary>The work around the build gets underestimated</summary>
+    <div class="body"><p>Building well with prefab is demanding in its own right, and capturing its cost potential means optimizing the whole delivery process around it. But the stages before and after the build get even less attention. Communities are not always land-ready: serviced sites, surveys, zoning, and infrastructure need to be in place before modules arrive. And some communities lack the capacity to operate housing once it is built. Participants gave real examples of housing sized wrong (too small to fund operations, or overbuilt) and of communities taking on supportive or addiction housing with no operating experience and then facing hard tenanting realities.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Needs analysis is inconsistent</summary>
+    <div class="body"><p>Inconsistent across the province, done thinly or skipped, so the wrong housing gets delivered. A sound needs analysis has to account for geography and climate zone as well as the function and typology of the housing itself, not just unit counts.</p></div>
+  </details>
+  <details class="item a">
+    <summary>The representation gap</summary>
+    <div class="body"><p>No unified organization represents Indigenous housing; there is uncertainty about which entity to approach (e.g., the First Nations Leadership Council, AHMA, the First Nations Housing and Infrastructure Council). Grant allocations often require approval from a nation, which can exclude urban communities, and a significant divide remains between on-reserve and off-reserve housing issues. Participants also called for coordination amongst funders and for a reduction in the labour and resources that go into preparing separate applications for each program.</p></div>
+  </details>
+  <details class="item a">
+    <summary>A constrained manufacturing environment and weak knowledge mobilization</summary>
+    <div class="body"><p>The operating environment for manufacturers is difficult: frequent business failures driven by weak models, a policy environment that has not grown demand, and thin senior-government procurement innovation. With certainty of demand, manufacturers can deliver for all housing projects, Indigenous housing included. Meanwhile, a huge amount of activity stays siloed: lots of effort, not much of it sticking.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Design processes that omit critical local needs</summary>
+    <div class="body"><p>Three failures came up repeatedly: housing sized for the wrong occupancy; buildings mismatched to their climate, leading to mold and poor insulation; and missing cultural amenities such as gathering spaces, cooking facilities, and gardens. This is true of prefab and conventional construction alike.</p></div>
+  </details>
+
+  <div class="trackhead"><span class="tag b">Track B</span><h3>Policy and program design</h3></div>
+  <details class="item b">
+    <summary>Scale versus geography</summary>
+    <div class="body"><p>Factories here are not reaching the scale that makes prefab cheap. The China/Europe comparison came up repeatedly: enormous factories serving dense markets we simply do not have. Growing BC-based manufacturing, local value-add, employment, and community reinvestment, and getting a BC-Building-Code-approved standardized catalogue recognized, were big priorities. At the same time, out-of-province manufacturers are already constructive partners in this ecosystem. ROC Modular, the Alberta-based manufacturer that worked in joint venture with Indigenous-owned NUQO to deliver the Hiy̓ám̓ project on Capilano Road, was at the workshop, and Nomodic, also Alberta-based, is doing strong work with Nations in BC. Meeting demand at scale will likely require these partnerships.</p></div>
+  </details>
+  <details class="item b">
+    <summary>A design-culture problem</summary>
+    <div class="body"><p>The shift from bespoke, artistic craft to an industrialized factory process is a mindset change the design professions have not made; every team wants to make its building an icon. "Snowflakes are expensive." "We have a housing crisis, not an architectural crisis." The workable path people saw: separate what is <em>visually</em> important from what is <em>societally</em> important, standardize the structural core, and treat cultural expression as a bounded, customizable exterior layer.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Affordability needs scale, and scale needs standardization</summary>
+    <div class="body"><p>CSA factory certification (A277) was cited as a real turning point, with an honest caveat: as applied today, certification does not always guarantee code-compliant product, and CSA is updating the A277 standard over the coming year, hence an opportunity to strengthen the knowledge mobilization around it. Software systems that do not talk to each other add cost and delay; the ship-building world (one system from design to delivery, six months) was held up as the contrast.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Too many decision-makers</summary>
+    <div class="body"><p>Nation, housing authority, BC Housing, CMHC, inspectors: layered, mismatched requirements that slow everything and bleed soft money into planning, applications, and approvals with no guarantee of reward.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Political timeline risk</summary>
+    <div class="body"><p>Work starts, politics shift, funding moves. Shortening timelines is partly about de-risking against changing headwinds.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Permitting cuts both ways</summary>
+    <div class="body"><p>Municipal bylaws inadvertently increase the cost, risk, and schedule of prefab projects and hinder standardized designs, and architects hinder the process too.</p></div>
+  </details>
+
+  <h2 style="font-size:1.45rem;margin-top:2.75rem" id="q3"><span class="qnum">Q3.</span> What would help</h2>
+  <hr class="rule q3">
+
+  <div class="trackhead"><span class="tag a">Track A</span><h3>Sector capacity and practice</h3></div>
+  <details class="item a">
+    <summary>Adaptable standardization with First Nations input</summary>
+    <div class="body"><p>Systems that are kit-of-parts driven <em>and</em> responsive to local climate, site, and cultural needs, not one design everywhere. Baseline unit layouts and a blueprint library as a starting point; performance thresholds and testing standards (the way NFRC works for windows); and CSA standards updated to include prefab.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Education on what prefab actually is</summary>
+    <div class="body"><p>And far better knowledge sharing across the sector.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Catalytic projects</summary>
+    <div class="body"><p>Deliberately conceived projects that force a step change, the way Brock Commons drove an 18-storey mass timber code later adopted in BC and beyond. Could a project bundle a dozen or more semi-standardized prefab builds with new approaches to procurement, design, and local land-use rules?</p></div>
+  </details>
+  <details class="item a">
+    <summary>Baseline needs analysis to design new programming</summary>
+    <div class="body"><p>An inventory of Indigenous trades programs (e.g., BladeRunners) and how well they keep people in the trades, plus a clear picture of how housing managers and development staff are gaining skills and what they still need.</p></div>
+  </details>
+  <details class="item a">
+    <summary>Better systems for collaboration and knowledge mobilization</summary>
+    <div class="body"><p>With the honest caveat that sharing only goes so far where manufacturers and professionals compete. Learning could be built directly into procurement, tied to improving the next iteration of a standardized design.</p></div>
+  </details>
+
+  <div class="trackhead"><span class="tag b">Track B</span><h3>Policy and program design</h3></div>
+  <details class="item b">
+    <summary>A clear, standardized procurement process</summary>
+    <div class="body"><p>Simple RFPs everyone understands, defined roles, and the GC and nation on board from the very start. The system needs to be genuinely different from traditional construction, not a modification of it.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Consistent demand and supply</summary>
+    <div class="body"><p>Manufacturers need a sales pipeline and locked schedules to keep costs down and staff employed. Ideas included schedule incentives for every party, and ways to backfill factory gaps when approvals slip.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Financing that fits</summary>
+    <div class="body"><p>More funding, and <em>consistent</em> funding: a 10-year minimum was named (the closure of the Community Housing Fund hit Old Massett hard; the Indigenous Housing Fund was smaller and mutually exclusive with it). Alliance-model and JV or co-ownership contracts that shift from transactional to relationship-based delivery. And routing funds into Indigenous hands for self-determined control.</p></div>
+  </details>
+  <details class="item b">
+    <summary>A single funding table</summary>
+    <div class="body"><p>A "Dragon's Den" model where a nation pitches once and ISC, CMHC, BC Housing, and Build Canada Homes align on one set of requirements and co-fund, solving the layered, mismatched-requirements problem. Acknowledged as ambitious ("a unicorn"), but wanted.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Aggregated demand and a managing body</summary>
+    <div class="body"><p>Bundle the need toward the 50,000-unit scale so a 10- or 20-unit site is not making its own case each time; a single entity would carry real purchasing power. FNHA was floated as one possible home for this, among others.</p></div>
+  </details>
+  <details class="item b">
+    <summary>Use the technology we already have</summary>
+    <div class="body"><p>The tools exist; the sector is not using them to full effect, and incompatible systems create needless delay.</p></div>
+  </details>
+</section>
+
+<section id="tensions">
+  <h2>Tensions and open questions</h2>
+  <hr class="rule q3">
+  <p>We kept the disagreements visible on purpose. They are where the real work is, and they will shape the fuller report.</p>
+  <div class="tensions">
+    <div class="tension"><b>Standardization vs. cultural and place specificity.</b> The central, unresolved tension: aggregate and standardize to cut cost and scale, while retaining the essential qualities of Indigenous housing across many small, culturally rooted communities. Both can be delivered "within reason," but big unique-design demands undermine cost, speed, and unit counts.</div>
+    <div class="tension"><b>Centralize vs. decentralize.</b> A centralized Indigenous-led body was seen as needed to lead and de-risk, while decentralization was named as the "probably preferred" approach. Unresolved.</div>
+    <div class="tension"><b>Who represents whom.</b> AHMA (off-reserve), the First Nations Infrastructure Council (on-reserve), and the Leadership Council, with government caught between; urban providers and nations positioned as competitors; and off-reserve members, many from outside BC, with no clear voice.</div>
+    <div class="tension"><b>The cost premium.</b> Prefab is already costing less, and is a competitive advantage, for savvy, experienced market players working in supportive local jurisdictions. For non-market developers it can often cost more (borne out in proforma work on a large Vancouver mixed-income project). Federal willingness to wear that premium is the shift, but it stays a live tension for anyone chasing the equity gap.</div>
+    <div class="tension"><b>Whether government moves off lowest-bid.</b> Broad skepticism, which is exactly why the "route funds to Indigenous ownership" workaround kept coming up.</div>
+    <div class="tension"><b>The limits of collaboration.</b> Real appetite to share and align, tempered by the reality that manufacturers and professionals compete for the same work.</div>
+  </div>
+</section>
+
+<section id="resources">
+  <h2>Projects, tools, and resources shared</h2>
+  <hr class="rule">
+  <p>Raised by participants and worth a look. We have added links for quick reference where they exist. If a resource you shared is missing, or you can save us a hunt with a link, please send it along.</p>
+  <details class="item">
+    <summary>Baseline studies</summary>
+    <div class="body">
+      <p>AFN with the Institute for Fiscal Studies &amp; Democracy (2021), <em>Cost Analysis of Current Housing Gaps and Future Housing Needs in First Nations</em> (<a href="https://static1.squarespace.com/static/5f29b2710512b20bd57bed44/t/618930be4ba2743dace94502/1636380867668/COO+SCA+2021+-+IFSD+National+Housing+Need+Cost+Analysis.pdf">afn.ca · full study PDF</a>).</p>
+      <p>AHMA (2022), <em>BC Urban, Rural, and Northern Indigenous Housing Strategy</em> (<a href="https://ahma-bc.org/wp-content/uploads/2024/03/AHMA_BCURNIHousingStrategy_220124.pdf">ahma-bc.org · strategy PDF</a>), noting the two studies use different assumptions and cannot simply be summed.</p>
+      <p>AHMA's <a href="https://ahma-bc.org/wp-content/uploads/2025/10/Rethinking-Prefab-Article.pdf">Rethinking Prefab</a> article.</p>
+    </div>
+  </details>
+  <details class="item">
+    <summary>Standards and programs</summary>
+    <div class="body">
+      <p>The <a href="https://cfbc.ca/first-peoples-housing/">Indigenous Construction Standard</a> (Construction Foundation of BC); <a href="https://www.acceleratedhousing.ca/">BC Housing DASH</a> (standardized, non-proprietary designs); and ZEIC's <a href="https://www.zeic.ca/programs/local-government-offsite-housing-accelerator/">Local Government Offsite Housing Accelerator, including the Naikoon "Flying Factory" webinar</a>.</p>
+    </div>
+  </details>
+  <details class="item">
+    <summary>Tools and models</summary>
+    <div class="body">
+      <p>The <a href="https://fourthworld.ca">Indigenous Housing Growth Platform</a> (Digital, an 11-phase, end-to-end tool with needs-assessment and governance models); <a href="https://www.ccdc.org/document/ccdc-32-2026-progressive-design-build-contract/">CCDC 32 Progressive Design-Build</a>; and stage-gated development frameworks referenced from Skwlāx Nation, Open Housing Canada, Turtle Island Connection, and Fourth World.</p>
+    </div>
+  </details>
+  <details class="item">
+    <summary>Coming up</summary>
+    <div class="body">
+      <p>The <a href="https://www.iepathways.ca/iheps">Indigenous Housing &amp; Economic Pathways Summit</a>, October 27–28, at the Vancouver Airport Marriott in Richmond, BC.</p>
+    </div>
+  </details>
+</section>
+
+<section id="next">
+  <h2>What happens next</h2>
+  <hr class="rule">
+  <div class="next">
+    <div class="next-item"><b>A fuller report</b> follows in about four weeks. It will fold in BCIHS's own research and go to the funders of this project (CMHC, the Real Estate Foundation of BC, the North Family Foundation, and the Zero Emissions Innovation Centre) and be used to engage Build Canada Homes, the province, and other decision-makers.</div>
+    <div class="next-item"><b>There may be a Phase 2.</b> This first report will identify where the opportunities are, and those insights may shape what a Phase 2 funds.</div>
+    <div class="next-item"><b>A contact list</b> with emails included (for those who opted in) will circulate so participants can connect directly. To opt out, please email <a href="mailto:events@zeic.ca">events@zeic.ca</a> by July 29.</div>
+    <div class="next-item"><b>Late thoughts are welcome.</b> Send them to <a href="mailto:khelsilem@gmail.com">khelsilem@gmail.com</a> or <a href="mailto:events@zeic.ca">events@zeic.ca</a> by July 29.</div>
+  </div>
+  <p class="thanks">With thanks to everyone who gave their time and candour on July 7.</p>
+</section>
+
+</main>
+
+<footer>
+  Interim Synthesis · July 7, 2026 Workshop · Hosted by BC Indigenous Housing Society ·
+  Feedback by July 29 to <a href="mailto:khelsilem@gmail.com">khelsilem@gmail.com</a> or <a href="mailto:events@zeic.ca">events@zeic.ca</a>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('toggleAll');
+  if(!btn) return;
+  var open = false;
+  btn.addEventListener('click', function(){
+    open = !open;
+    document.querySelectorAll('details.item').forEach(function(d){ d.open = open; });
+    btn.textContent = open ? 'Collapse all details' : 'Expand all details';
+    btn.setAttribute('aria-pressed', String(open));
+  });
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('details.item').forEach(function(d){ d.open = true; });
+  });
+})();
+</script>
+
+</body>
+</html>
